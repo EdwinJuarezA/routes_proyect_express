@@ -1,0 +1,12 @@
+[
+    { "id": 1, "nombre": "Agua", "tipo": "Base líquida" },
+    { "id": 2, "nombre": "Café", "tipo": "Sólido" },
+    { "id": 3, "nombre": "Leche", "tipo": "Base líquida" },
+    { "id": 4, "nombre": "Té Verde", "tipo": "Sólido" },
+    { "id": 5, "nombre": "Té Negro", "tipo": "Sólido" },
+    { "id": 6, "nombre": "Cacao", "tipo": "Sólido" },
+    { "id": 7, "nombre": "Hielo", "tipo": "Sólido" },
+    { "id": 8, "nombre": "Mango", "tipo": "Fruta" },
+    { "id": 9, "nombre": "Limón", "tipo": "Fruta" },
+    { "id": 10, "nombre": "Flor de Jamaica", "tipo": "Sólido" }
+]

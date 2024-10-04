@@ -1,0 +1,12 @@
+[
+    { "id": 1, "nombre": "Maria", "correo": "maria@example.com", "numero": "123456789", "edad": 25, "genero": "femenino" },
+    { "id": 2, "nombre": "Juan", "correo": "juan@example.com", "numero": "987654321", "edad": 30, "genero": "masculino" },
+    { "id": 3, "nombre": "Ana", "correo": "ana@example.com", "numero": "456789123", "edad": 22, "genero": "femenino" },
+    { "id": 4, "nombre": "Pedro", "correo": "pedro@example.com", "numero": "789123456", "edad": 28, "genero": "masculino" },
+    { "id": 5, "nombre": "Lucía", "correo": "lucia@example.com", "numero": "321654987", "edad": 26, "genero": "femenino" },
+    { "id": 6, "nombre": "Carlos", "correo": "carlos@example.com", "numero": "654987321", "edad": 35, "genero": "masculino" },
+    { "id": 7, "nombre": "Sofia", "correo": "sofia@example.com", "numero": "852963741", "edad": 29, "genero": "femenino" },
+    { "id": 8, "nombre": "Miguel", "correo": "miguel@example.com", "numero": "963741852", "edad": 27, "genero": "masculino" },
+    { "id": 9, "nombre": "Laura", "correo": "laura@example.com", "numero": "741852963", "edad": 24, "genero": "femenino" },
+    { "id": 10, "nombre": "Luis", "correo": "luis@example.com", "numero": "159753486", "edad": 33, "genero": "masculino" }
+]

@@ -1,0 +1,86 @@
+pruebas para menu
+
+post
+{
+    "id": 11,
+    "nombre": "Café Mocha",
+    "ingredientes": ["Café", "Leche", "Chocolate"],
+    "precio": 45
+}
+put
+{
+    "nombre": "Café Mocha",
+    "ingredientes": ["Café", "Leche", "Chocolate", "Crema batida"],
+    "precio": 50
+}
+
+Clientes 
+post
+{
+    "id": 11,
+    "nombre": "Fernando Martínez",
+    "correo": "fernando.martinez@example.com",
+    "numero_telefono": "5555555555",
+    "edad": 28,
+    "genero": "Masculino"
+}
+put
+{
+    "nombre": "Fernando Martínez Pérez",
+    "correo": "fernando.perez@example.com",
+    "numero_telefono": "5555123456",
+    "edad": 29,
+    "genero": "Masculino"
+}
+
+Pedido
+post
+{
+    "id": 11,
+    "bebidas": ["Café Mocha", "Té Negro"],
+    "total": 75,
+    "estado": "Fila"
+}
+put
+{
+    "bebidas": ["Café Mocha", "Té Verde"],
+    "total": 80,
+    "estado": "Preparando"
+}
+Users 
+post
+{
+    "id": 11,
+    "nombre": "Carolina Díaz",
+    "correo": "carolina.diaz@example.com",
+    "contraseña": "password123",
+    "rol": "cliente"
+}
+put
+{
+    "nombre": "Carolina Díaz Pérez",
+    "correo": "carolina.perez@example.com",
+    "contraseña": "newpassword123",
+    "rol": "administrador"
+}
+
+login 
+post 
+{
+    "correo": "juan@example.com",
+    "contraseña": "12345"
+}
+
+ingredientes
+post
+{
+    "id": 11,
+    "nombre": "Menta",
+    "tipo": "Sólido"
+}
+put
+{
+    "nombre": "Menta Fresca",
+    "tipo": "Sólido"
+}
+

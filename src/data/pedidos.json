@@ -1,0 +1,12 @@
+[
+    { "id": 1, "bebidas": ["Café Americano", "Latte"], "total": 50, "estado": "Fila" },
+    { "id": 2, "bebidas": ["Cappuccino"], "total": 35, "estado": "Preparando" },
+    { "id": 3, "bebidas": ["Té Verde", "Limonada"], "total": 40, "estado": "Entregado" },
+    { "id": 4, "bebidas": ["Frappe"], "total": 45, "estado": "Fila" },
+    { "id": 5, "bebidas": ["Smoothie de Mango"], "total": 50, "estado": "Preparando" },
+    { "id": 6, "bebidas": ["Chocolate Caliente"], "total": 40, "estado": "Entregado" },
+    { "id": 7, "bebidas": ["Té Negro", "Agua de Jamaica"], "total": 40, "estado": "Fila" },
+    { "id": 8, "bebidas": ["Café Americano"], "total": 20, "estado": "Preparando" },
+    { "id": 9, "bebidas": ["Latte"], "total": 30, "estado": "Entregado" },
+    { "id": 10, "bebidas": ["Frappe", "Smoothie de Mango"], "total": 95, "estado": "Fila" }
+]

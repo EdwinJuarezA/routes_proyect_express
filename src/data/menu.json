@@ -1,0 +1,12 @@
+[
+    { "id": 1, "nombre": "Café Americano", "ingredientes": ["Agua", "Café"], "precio": 20 },
+    { "id": 2, "nombre": "Latte", "ingredientes": ["Leche", "Café"], "precio": 30 },
+    { "id": 3, "nombre": "Cappuccino", "ingredientes": ["Leche", "Café", "Espuma"], "precio": 35 },
+    { "id": 4, "nombre": "Té Verde", "ingredientes": ["Agua", "Té Verde"], "precio": 25 },
+    { "id": 5, "nombre": "Té Negro", "ingredientes": ["Agua", "Té Negro"], "precio": 25 },
+    { "id": 6, "nombre": "Chocolate Caliente", "ingredientes": ["Leche", "Cacao"], "precio": 40 },
+    { "id": 7, "nombre": "Frappe", "ingredientes": ["Hielo", "Café"], "precio": 45 },
+    { "id": 8, "nombre": "Smoothie de Mango", "ingredientes": ["Mango", "Hielo", "Leche"], "precio": 50 },
+    { "id": 9, "nombre": "Limonada", "ingredientes": ["Agua", "Limón"], "precio": 15 },
+    { "id": 10, "nombre": "Agua de Jamaica", "ingredientes": ["Agua", "Flor de Jamaica"], "precio": 15 }
+]

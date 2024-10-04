@@ -1,0 +1,12 @@
+[
+    { "id": 1, "nombre": "Juan", "correo": "juan@example.com", "contraseña": "12345", "rol": "cliente" },
+    { "id": 2, "nombre": "Ana", "correo": "ana@example.com", "contraseña": "abcde", "rol": "administrador" },
+    { "id": 3, "nombre": "Luis", "correo": "luis@example.com", "contraseña": "54321", "rol": "vendedor" },
+    { "id": 4, "nombre": "Maria", "correo": "maria@example.com", "contraseña": "qwerty", "rol": "cliente" },
+    { "id": 5, "nombre": "Pedro", "correo": "pedro@example.com", "contraseña": "asdfg", "rol": "cocina" },
+    { "id": 6, "nombre": "Lucía", "correo": "lucia@example.com", "contraseña": "zxcvb", "rol": "cliente" },
+    { "id": 7, "nombre": "Carlos", "correo": "carlos@example.com", "contraseña": "yuiop", "rol": "administrador" },
+    { "id": 8, "nombre": "Sofia", "correo": "sofia@example.com", "contraseña": "mnbvc", "rol": "cliente" },
+    { "id": 9, "nombre": "Miguel", "correo": "miguel@example.com", "contraseña": "lkjhg", "rol": "vendedor" },
+    { "id": 10, "nombre": "Laura", "correo": "laura@example.com", "contraseña": "polkm", "rol": "cliente" }
+]

@@ -23,6 +23,8 @@ app.use('/api/pedidos', require('./routes/pedidos'));
 app.use('/api/login', require('./routes/login'));
 app.use('/api/personalizar', require('./routes/ingredientes'));
 app.use('/api/pagos', require('./routes/pagos'));
+app.use('/api/categorias',require('./routes/categorias'));
+app.use('/api/bebidas',require('./routes/bebidas'));
 
 // Starting server
 app.listen(app.get('port'), () => {

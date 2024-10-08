@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
 require('dotenv').config();
-
 // Settings
 const PORT = process.env.PORT || 3000;
 app.set('port', PORT);

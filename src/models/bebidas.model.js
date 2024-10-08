@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes, Model } = require('sequelize');
 const sequelize = require('../database/database');
-const Categorias = require('./Categorias');
+const Categorias = require('./categorias.model');
 
 
 class Bebidas extends Model{}

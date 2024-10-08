@@ -25,6 +25,8 @@ app.use('/api/personalizar', require('./routes/ingredientes'));
 app.use('/api/pagos', require('./routes/pagos'));
 app.use('/api/categorias',require('./routes/categorias'));
 app.use('/api/bebidas',require('./routes/bebidas'));
+app.use('/api/mesas', require('./routes/mesas'));
+
 
 // Starting server
 app.listen(app.get('port'), () => {

@@ -87,15 +87,15 @@ router.delete('/:id', async(req, res) => {
     } else res.status(404).send('Ingrediente no encontrado');*/
 
     const id = req.params.id;
-    const delete_drink = await Drinks.destroy({
+    const delete_pedido = await Pedidos.destroy({
         where: {
-            BebidaID: id,
+            PedidoID: id,
         }
     })
     res.status(204).json({
         ok:true,
         status:204,
-        body:delete_drink
+        body:delete_pedido
      })
 });
 

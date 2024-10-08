@@ -1,10 +1,15 @@
 const Sequelize = require('sequelize')
 
 const sequelize = new Sequelize('mydrink','admin','MyDrink07_10',{
-    host: 'mydrink-db.cn622ecw65bm.us-east-2.rds.amazonaws.com/',
+    host: 'mydrink-db.cn622ecw65bm.us-east-2.rds.amazonaws.com',
     dialect: 'mysql',
-    port: 3306
+    port: 3306,
+    define: {
+        freezeTableName: true,  // Evita que Sequelize pluralice los nombres de las tablas
+      },
 });
+
+
 
 async function testConnection() {
     sequelize.authenticate()
@@ -17,4 +22,6 @@ async function testConnection() {
 }
 
 testConnection();
+
+module.exports = sequelize;
 

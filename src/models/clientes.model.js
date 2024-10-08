@@ -1,10 +1,33 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../database/config/database');
+const { Sequelize, DataTypes, Model } = require('sequelize');
+const sequelize = require('../database/database');
 
-const Cliente = sequelize.define('clientes', {
-    id: {type: Sequelize.SMALLINT, primaryKey: true},
-    name: Sequelize.STRING,
-    email: Sequelize.STRING,
-    telefono: Sequelize.STRING,
-    comentarios:Sequelize.STRING
-  })
+
+class Clientes extends Model{}
+
+Clientes.init({
+  ClienteID:{
+    type: DataTypes.UUID,
+    defaultValue: DataTypes.UUIDV4,
+    primaryKey: true
+  },
+  Nombre:{
+    type:DataTypes.STRING,
+    allowNull: false //no null
+  },
+  Correo:{
+    type:DataTypes.STRING,
+    allowNull:false
+  },
+  Telefono:{
+    type:DataTypes.STRING,
+    allowNull:false
+  },
+  Comentarios:{
+    type:DataTypes.STRING
+  }
+},{
+  sequelize,
+  modelName:"Clientes",
+});
+
+module.exports = Clientes;

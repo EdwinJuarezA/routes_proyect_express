@@ -1,6 +1,9 @@
 const { Router } = require('express');
 const router = Router();
 const clientes = require('../data/clientes.json');
+const { faker } = require('@faker-js/faker'); 
+
+const Clients = require("../models/clientes.model.js");
 
 // Obtener todos los clientes
 router.get('/', (req, res) => {
@@ -15,10 +18,17 @@ router.get('/:id', (req, res) => {
 });
 
 // Crear un nuevo cliente
-router.post('/', (req, res) => {
-    const nuevoCliente = req.body;
+router.post('/', async(req, res) => {
+    /*const nuevoCliente = req.body;
     clientes.push(nuevoCliente);
-    res.status(201).json(clientes);
+    res.status(201).json(clientes);*/
+    const create_client = await Clients.create({
+        Nombre: faker.person.fullName(),
+        Correo: faker.internet.email(),
+        Telefono: faker.phone.number(),
+        Comentarios: faker.lorem.sentence()
+    });
+    res.status(201).json(create_client);
 });
 
 // Actualizar un cliente

@@ -2,6 +2,7 @@ const express = require('express');
 require('dotenv').config();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const sequelize = require('../src/database/database'); 
 const app = express();
 
 // Settings

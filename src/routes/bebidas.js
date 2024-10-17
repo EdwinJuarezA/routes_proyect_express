@@ -2,16 +2,16 @@ const { Router } = require('express');
 const router = Router();
 //const ingredientes = require('../data/ingredientes.json');
 const Drinks = require("../models/bebidas.model.js");
+const verifyToken = require('../middleware/auth');
 
 // Obtener todas las categorias
-router.get('/', async(req, res) => {
-    /*res.json(ingredientes);*/
-    const drinks = await Drinks.findAll()
+router.get('/', verifyToken, async (req, res) => {
+    const drinks = await Drinks.findAll();
     res.status(200).json({
-        ok:true,
+        ok: true,
         status: 200,
         body: drinks
-    })
+    });
 });
 
 // Obtener una categoria por ID

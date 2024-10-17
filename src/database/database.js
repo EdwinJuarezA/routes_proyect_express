@@ -5,7 +5,7 @@ const sequelize = new Sequelize('mydrink','admin','MyDrink07_10',{
     dialect: 'mysql',
     port: 3306,
     define: {
-        freezeTableName: true,  // Evita que Sequelize pluralice los nombres de las tablas
+        freezeTableName: true,  
       },
 });
 

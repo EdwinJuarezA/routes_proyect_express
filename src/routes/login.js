@@ -1,18 +1,21 @@
-const { Router } = require('express');
-const router = Router();
-const users = require('../data/users.json');
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const config = require('../config');
+const router = express.Router();
 
-// Validar credenciales de login
+const user = { id: 1, username: 'user', password: 'password' };
+
 router.post('/', (req, res) => {
-    const { correo, contraseña } = req.body;
-    const user = users.find(u => u.correo === correo && u.contraseña === contraseña);
-    
-    if (user) {
-        const { contraseña, ...userData } = user;
-        res.json(userData);  // Retorna todos los datos excepto la contraseña
-    } else {
-        res.status(401).send('Credenciales incorrectas');
+    const { username, password } = req.body;
+
+    if (username === user.username && password === user.password) {
+        const token = jwt.sign({ id: user.id }, config.jwtSecret, {
+            expiresIn: config.jwtExpiration,
+        });
+        return res.status(200).send({ auth: true, token });
     }
+
+    return res.status(401).send({ auth: false, token: null });
 });
 
 module.exports = router;

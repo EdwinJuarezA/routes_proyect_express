@@ -17,13 +17,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // CORS: Permite peticiones de cualquier origen
-app.use(cors());
+//app.use(cors());
 
 // Opción para restringir a un sitio específico
-// const corsOptions = {
-//     origin: '',
-// };
-// app.use(cors(corsOptions));
+const corsOptions = {
+    origin: 'http://localhost:8080',
+};
+app.use(cors(corsOptions));
 
 // Rutas
 app.use('/api/users', verifyToken, require('./routes/users'));

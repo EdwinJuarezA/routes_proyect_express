@@ -3,6 +3,7 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const sequelize = require('../src/database/database');
+const cors = require('cors'); // Importa CORS
 const app = express();
 const verifyToken = require('../src/middleware/auth');
 
@@ -15,7 +16,16 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-//Rutas
+// CORS: Permite peticiones de cualquier origen
+app.use(cors());
+
+// Opción para restringir a un sitio específico
+// const corsOptions = {
+//     origin: '',
+// };
+// app.use(cors(corsOptions));
+
+// Rutas
 app.use('/api/users', verifyToken, require('./routes/users'));
 app.use('/api/menu', verifyToken, require('./routes/menu'));
 app.use('/api/clientes', verifyToken, require('./routes/clientes'));
@@ -28,6 +38,8 @@ app.use('/api/mesas', verifyToken, require('./routes/mesas'));
 
 app.use('/api/login', require('./routes/protected'), require('./routes/login'));
 app.use('/api/protected', require('./routes/protected'));
+// Rutas sin token para probar CORS
+app.use('/api/cors', require('./routes/corsTest'));
 
 // Starting server
 app.listen(app.get('port'), () => {

@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const sequelize = require('../src/database/database');
 const cors = require('cors');
+const cors = require('cors'); // Importa CORS
 const app = express();
 const verifyToken = require('../src/middleware/auth');
 

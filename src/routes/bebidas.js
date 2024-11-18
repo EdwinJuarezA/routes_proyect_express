@@ -4,7 +4,7 @@ const router = Router();
 const Drinks = require("../models/bebidas.model.js");
 const verifyToken = require('../middleware/auth');
 
-// Obtener todas las categorias
+// Obtener todas las bebidas
 router.get('/', verifyToken, async (req, res) => {
     const drinks = await Drinks.findAll();
     res.status(200).json({
@@ -14,12 +14,8 @@ router.get('/', verifyToken, async (req, res) => {
     });
 });
 
-// Obtener una categoria por ID
+// Obtener una bebida por ID
 router.get('/:id', async(req, res) => {
-    /*
-    const ingrediente = ingredientes.find(i => i.id === parseInt(req.params.id));
-    if (ingrediente) res.json(ingrediente);
-    else res.status(404).send('Ingrediente no encontrado');*/
     const id = req.params.id;
     const drinks = await Drinks.findOne({
         where: {
@@ -33,12 +29,8 @@ router.get('/:id', async(req, res) => {
     })
 });
 
-// Crear una nueva categoria
+// Crear una nueva bebida
 router.post('/',async (req, res) => {
-    /*
-    const nuevoIngrediente = req.body;
-    ingredientes.push(nuevoIngrediente);
-    res.status(201).json(ingredientes);*/
     const dataDrinks = req.body;
     await Drinks.sync();
     const create_drink = await Drinks.create({
@@ -50,14 +42,8 @@ router.post('/',async (req, res) => {
     res.status(201).json(create_drink);
 });
 
-// Actualizar categoria
+// Actualizar bebida
 router.put('/:id', async(req, res) => {
-    /*
-    const ingrediente = ingredientes.find(i => i.id === parseInt(req.params.id));
-    if (ingrediente) {
-        Object.assign(ingrediente, req.body);
-        res.json(ingrediente);
-    } else res.status(404).send('Ingrediente no encontrado');*/
     const id = req.params.id;
     const dataDrinks = req.body;
     const update_drinks = await Drinks.update({
@@ -66,26 +52,19 @@ router.put('/:id', async(req, res) => {
         CategoriaID: dataDrinks.CategoriaID,
         Stock: dataDrinks.Stock
     },{
-       where: {
-           BebidaID: id,
-       }
+        where: {
+            BebidaID: id,
+        }
     })
     res.status(200).json({
-       ok:true,
-       status:200,
-       body:update_drinks
+        ok:true,
+        status:200,
+        body:update_drinks
     })
 });
 
-// Eliminar categoria
+// Eliminar bebida
 router.delete('/:id', async(req, res) => {
-    /*
-    const index = ingredientes.findIndex(i => i.id === parseInt(req.params.id));
-    if (index !== -1) {
-        ingredientes.splice(index, 1);
-        res.json(ingredientes);
-    } else res.status(404).send('Ingrediente no encontrado');*/
-
     const id = req.params.id;
     const delete_pedido = await Pedidos.destroy({
         where: {
@@ -96,7 +75,7 @@ router.delete('/:id', async(req, res) => {
         ok:true,
         status:204,
         body:delete_pedido
-     })
+    })
 });
 
 module.exports = router;

@@ -8,7 +8,7 @@ const cors = require('cors'); // Importa CORS
 const app = express();
 const verifyToken = require('../src/middleware/auth');
 
-<<<<<<< HEAD
+
 const ClientRoutes = require('./routes/clientes');
 //const { Sequelize } = require('sequelize');
 const sequelize = require('./database/database');

@@ -35,6 +35,7 @@ Bebidas.init({
 },{
   sequelize,
   modelName:"Bebidas",
+  timestamps: false,
 });
 
 module.exports = Bebidas;

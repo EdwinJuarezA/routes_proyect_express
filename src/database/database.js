@@ -10,7 +10,7 @@ const sequelize = new Sequelize('mydrink','admin','MyDrink07_10',{
 });
 
 
-/*
+
 async function testConnection() {
     sequelize.authenticate()
     .then(() => {
@@ -21,7 +21,7 @@ async function testConnection() {
     })
 }
 
-testConnection();*/
+testConnection();
 
 module.exports = sequelize;
 

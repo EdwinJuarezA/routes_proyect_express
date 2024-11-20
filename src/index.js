@@ -4,37 +4,29 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const sequelize = require('../src/database/database');
 const cors = require('cors');
-const cors = require('cors'); // Importa CORS
 const app = express();
 const verifyToken = require('../src/middleware/auth');
-
-
-const ClientRoutes = require('./routes/clientes');
-//const { Sequelize } = require('sequelize');
-const sequelize = require('./database/database');
-
 
 // Settings
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || '192.168.1.162';
 app.set('port', PORT);
-const allowedOrigins = ['http://192.168.1.161',];
+const allowedOrigins = ['http://192.168.1.161', 'http://localhost:3000'];
 const corsOptions = {
   origin: function (origin, callback) {
-    console.log('origin: ' + origin);
+    console.log('Origin recibido:', origin);
 
-    if (!origin) {
-      callback(null, true);
+    if (!origin || origin === 'undefined') {
+      callback(new Error('CORS no permite solicitudes sin un encabezado Origin válido'));
     } else if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
+      callback(null, true); // Permitir si el origen está en la lista
     } else {
-      callback(new Error('No permitido por CORS'));
+      callback(new Error('Origen no permitido por CORS')); // Bloquear si el origen no está permitido
     }
   },
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
-
 
 // Middlewares
 app.use(morgan('dev'));

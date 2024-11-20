@@ -21,7 +21,7 @@ Bebidas.init({
   },
   CategoriaID:{
     type: DataTypes.UUID,
-    allowNull: false,
+    allowNull: true,
     references: {
       model: Categorias, 
       key: 'CategoriaID',

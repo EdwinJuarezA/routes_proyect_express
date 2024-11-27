@@ -3,38 +3,38 @@ const sequelize = require('../database/database');
 const Categorias = require('./categorias.model');
 
 
-class Bebidas extends Model{}
+class Bebidas extends Model { }
 
 Bebidas.init({
-  BebidaID:{
+  BebidaID: {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
     primaryKey: true
   },
-  Nombre:{
-    type:DataTypes.STRING,
+  Nombre: {
+    type: DataTypes.STRING,
     allowNull: false //no null
   },
-  Precio:{
-    type:DataTypes.DECIMAL,
-    allowNull:false
+  Precio: {
+    type: DataTypes.DECIMAL,
+    allowNull: false
   },
-  CategoriaID:{
+  CategoriaID: {
     type: DataTypes.UUID,
     allowNull: true,
     references: {
-      model: Categorias, 
+      model: Categorias,
       key: 'CategoriaID',
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL',
   },
-  Stock:{
-    type:DataTypes.INTEGER
+  Stock: {
+    type: DataTypes.INTEGER
   }
-},{
+}, {
   sequelize,
-  modelName:"Bebidas",
+  modelName: "Bebidas",
   timestamps: false,
 });
 

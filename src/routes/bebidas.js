@@ -1,11 +1,10 @@
 const { Router } = require('express');
 const router = Router();
-//const ingredientes = require('../data/ingredientes.json');
-const Drinks = require("../models/bebidas.model.js");
-const verifyToken = require('../middleware/auth');
+
+const Drinks = require("../models/bebidas.model")
 
 // Obtener todas las bebidas
-router.get('/', verifyToken, async (req, res) => {
+router.get('/', async (req, res) => {
     const drinks = await Drinks.findAll();
     res.status(200).json({
         ok: true,
@@ -66,15 +65,15 @@ router.put('/:id', async(req, res) => {
 // Eliminar bebida
 router.delete('/:id', async(req, res) => {
     const id = req.params.id;
-    const delete_pedido = await Pedidos.destroy({
+    const delete_bebida = await Drinks.destroy({
         where: {
-            PedidoID: id,
+            BebidaID: id,
         }
     })
     res.status(204).json({
         ok:true,
         status:204,
-        body:delete_pedido
+        body:delete_bebida
     })
 });
 

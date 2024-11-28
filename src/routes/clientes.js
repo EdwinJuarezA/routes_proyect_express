@@ -26,20 +26,6 @@ router.get('/:id', async (req, res) => {
         status: 200,
         body: client
     })
-
-
-    router.post('/', async (req, res) => {
-        const dataClients = req.body;
-        await Clients.sync();
-        const create_client = await Clients.create({
-            Nombre: dataClients.Nombre,
-            Correo: dataClients.Correo,
-            Telefono: dataClients.Telefono,
-            Comentarios: dataClients.Comentarios
-        });
-        res.status(201).json(create_client);
-    });// Crear un nuevo cliente
-
     const dataClients = req.body;
     await Clients.sync();
     const create_client = await Clients.create({
@@ -50,6 +36,19 @@ router.get('/:id', async (req, res) => {
     });
     res.status(201).json(create_client);
 });
+
+router.post('/', async (req, res) => {
+    const dataClients = req.body;
+    await Clients.sync();
+    const create_client = await Clients.create({
+        Nombre: dataClients.Nombre,
+        Correo: dataClients.Correo,
+        Telefono: dataClients.Telefono,
+        Comentarios: dataClients.Comentarios
+    });
+    res.status(201).json(create_client);
+});// Crear un nuevo cliente
+
 
 // Actualizar un cliente
 router.put('/:id', async (req, res) => {
